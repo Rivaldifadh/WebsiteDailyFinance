@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencatat Keuangan Harian</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Pencatat Keuangan Harian</h1>
+        <form id="formKeuangan">
+            <input type="date" id="tanggal" required>
+
+            <select id="jenis">
+                <option value="Pemasukan">Pemasukan</option>
+                <option value="Pengeluaran">Pengeluaran</option>
+            </select>
+
+            <input type="text" id="keterangan"
+                   placeholder="Keterangan" required>
+
+            <input type="number" id="nominal"
+                   placeholder="Nominal" required>
+
+            <button type="submit">Simpan</button>
+
+        </form>
+
+        <div class="summary">
+            <h3>Total Pemasukan :
+                <span id="totalPemasukan">Rp0</span>
+            </h3>
+
+            <h3>Total Pengeluaran :
+                <span id="totalPengeluaran">Rp0</span>
+            </h3>
+
+            <h3>Saldo :
+                <span id="saldo">Rp0</span>
+            </h3>
+        </div>
+
+        <h2>Data Keuangan</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Tanggal</th>
+                    <th>Jenis</th>
+                    <th>Keterangan</th>
+                    <th>Nominal</th>
+                    <th>Aksi</th>
+                </tr>
+            </thead>
+
+            <tbody id="dataKeuangan"></tbody>
+
+        </table>
+
+    </div>
+
+    <script src="finance.js"></script>
+
+</body>
+</html>
