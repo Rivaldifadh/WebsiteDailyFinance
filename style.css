@@ -1,11 +1,10 @@
 body{
     font-family: Arial, sans-serif;
     background:#f4f4f4;
-    width: auto;
 }
 
 .container{
-    width:auto;
+    width:100%;
     margin:auto;
     background:rgb(124, 101, 226);
     padding:20px;
