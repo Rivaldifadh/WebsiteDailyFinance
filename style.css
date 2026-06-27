@@ -60,3 +60,61 @@ th, td{
 .hapus{
     background:red;
 }
+
+@media (max-width:768px){
+
+    .container{
+        width:95%;
+        padding:15px;
+    }
+
+    form{
+        flex-direction:column;
+    }
+
+    input,
+    select,
+    button{
+        width:100%;
+    }
+
+    .summary{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .summary h3{
+        width:100%;
+        text-align:center;
+    }
+
+}
+
+@media (max-width:480px){
+
+    body{
+        padding:10px;
+    }
+
+    h1{
+        font-size:24px;
+    }
+
+    h2{
+        font-size:20px;
+    }
+
+    table{
+        font-size:14px;
+    }
+
+    th,
+    td{
+        padding:8px;
+    }
+
+    button{
+        font-size:14px;
+    }
+
+}
