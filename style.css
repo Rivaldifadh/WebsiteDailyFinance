@@ -6,7 +6,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(to right, rgb(213, 232, 255), rgb(247, 212, 255));
+  background: linear-gradient(100deg, rgba(217, 163, 235, 0.867), #90cdff);
 }
 
 .container {
@@ -17,6 +17,10 @@ body {
 }
 
 h1 {
+  text-align: center;
+}
+
+h2 {
   text-align: center;
 }
 
@@ -44,8 +48,8 @@ button {
 
 button {
   padding: 10px 15px;
-  background: #90cdff;
-  color: white;
+  background: linear-gradient(100deg, #90cdff, rgba(217, 163, 235, 0.867));
+  color: black;
   border: none;
   cursor: pointer;
 }
