@@ -221,6 +221,23 @@ tr:nth-child(even) {
     display: flex;
     flex-direction: column;
   }
+   scrollbar-width: thin;
+    scrollbar-color: #555 #f0f0f0;
+}
+
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
   th,
   td {
     padding: 6px;
