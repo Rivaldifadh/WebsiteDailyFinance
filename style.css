@@ -216,15 +216,6 @@ tr:nth-child(even) {
     padding: 15px;
   }
 
-  .table-responsive {
-    min-width: unset;
-    display: flex;
-    flex-direction: column;
-  }
-   scrollbar-width: thin;
-    scrollbar-color: #555 #f0f0f0;
-}
-
 /* Chrome, Edge, Safari */
 ::-webkit-scrollbar {
     width: 8px;
