@@ -1,4 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+
 import {
   getFirestore,
   collection,
@@ -6,7 +7,7 @@ import {
   getDocs,
   deleteDoc,
   doc,
-} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
 // =======================
 // Firebase Configuration
@@ -58,6 +59,7 @@ form.addEventListener("submit", async function (e) {
     alert("Gagal menyimpan data!");
   }
 });
+localStorage.clear();
 
 // =======================
 // Menampilkan Data
@@ -73,49 +75,43 @@ async function tampilkanData() {
   snapshot.forEach((docs) => {
     const item = docs.data();
 
-    if (item.jenis === "Pemasukan") {
-      pemasukan += item.nominal;
+    // Mendukung field huruf kecil maupun huruf besar
+    const tanggal = item.tanggal ?? item.Tanggal ?? "-";
+    const jenis = item.jenis ?? item.Jenis ?? "-";
+    const keterangan = item.keterangan ?? item.Keterangan ?? "-";
+    const nominal = Number(item.nominal ?? item.Nominal ?? 0);
+
+    if (jenis === "Pemasukan") {
+      pemasukan += nominal;
     } else {
-      pengeluaran += item.nominal;
+      pengeluaran += nominal;
     }
 
     tabel.innerHTML += `
-
-        <tr>
-
-            <td>${item.tanggal}</td>
-
-            <td>${item.jenis}</td>
-
-            <td>${item.keterangan}</td>
-
-            <td>Rp ${item.nominal.toLocaleString()}</td>
-
-            <td>
-
-                <button
-                    class="hapus"
-                    onclick="hapusData('${docs.id}')">
-
-                    Hapus
-
-                </button>
-
-            </td>
-
-        </tr>
-
-        `;
+      <tr>
+        <td>${tanggal}</td>
+        <td>${jenis}</td>
+        <td>${keterangan}</td>
+        <td>Rp ${nominal.toLocaleString("id-ID")}</td>
+        <td>
+          <button
+            class="hapus"
+            onclick="hapusData('${docs.id}')">
+            Hapus
+          </button>
+        </td>
+      </tr>
+    `;
   });
 
   document.getElementById("totalPemasukan").textContent =
-    "Rp " + pemasukan.toLocaleString();
+    "Rp " + pemasukan.toLocaleString("id-ID");
 
   document.getElementById("totalPengeluaran").textContent =
-    "Rp " + pengeluaran.toLocaleString();
+    "Rp " + pengeluaran.toLocaleString("id-ID");
 
   document.getElementById("saldo").textContent =
-    "Rp " + (pemasukan - pengeluaran).toLocaleString();
+    "Rp " + (pemasukan - pengeluaran).toLocaleString("id-ID");
 }
 
 // =======================
