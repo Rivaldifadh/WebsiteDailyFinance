@@ -162,6 +162,16 @@ tbody tr:hover {
   background: #b0b5b9;
 }
 
+.nav-link,
+.btn-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  text-decoration: wavy;
+  color: Black;
+  margin: 3px 0 3px 0;
+}
 /* =========================
    TABLET
 ========================= */
@@ -239,20 +249,19 @@ tbody tr:hover {
     padding: 15px;
   }
 
-
-/* Chrome, Edge, Safari */
-::-webkit-scrollbar {
+  /* Chrome, Edge, Safari */
+  ::-webkit-scrollbar {
     width: 8px;
-}
+  }
 
-::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     background-color: #555;
     border-radius: 8px;
-}
+  }
 
-::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track {
     background-color: #f0f0f0;
-}
+  }
   th,
   td {
     padding: 6px;
@@ -260,10 +269,10 @@ tbody tr:hover {
   }
 
   /* ===== TABLE MOBILE ===== */
-/* ===== TABLE MOBILE ===== */
+  /* ===== TABLE MOBILE ===== */
 
-.table-responsive {
-  display: flex;
+  .table-responsive {
+    display: flex;
     width: 100%;
     max-width: 100%;
     overflow-x: auto;
@@ -271,19 +280,19 @@ tbody tr:hover {
     margin-top: 15px;
     border-radius: 8px;
     -webkit-overflow-scrolling: touch;
-}
+  }
 
-table {
+  table {
     width: max-content;
     min-width: 700px;
     border-collapse: collapse;
-}
+  }
 
-th,
-td {
+  th,
+  td {
     padding: 10px 14px;
     font-size: 13px;
     white-space: nowrap;
     color: black;
-}
+  }
 }
