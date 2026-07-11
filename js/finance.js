@@ -1,7 +1,6 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+import { db } from "./firebase.js";
 
 import {
-  getFirestore,
   collection,
   addDoc,
   getDocs,
@@ -9,22 +8,6 @@ import {
   doc,
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
-// =======================
-// Firebase Configuration
-// =======================
-const firebaseConfig = {
-  apiKey: "AIzaSyDeRGq8Ax6VkjrDJ4zBVUJb3ip2OUYugJw",
-  authDomain: "websitedailyfinance.firebaseapp.com",
-  projectId: "websitedailyfinance",
-  storageBucket: "websitedailyfinance.firebasestorage.app",
-  messagingSenderId: "131234044538",
-  appId: "1:131234044538:web:67c5dc8e23fd15e88939c3",
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-// =======================
 // Element HTML
 // =======================
 const form = document.getElementById("formKeuangan");

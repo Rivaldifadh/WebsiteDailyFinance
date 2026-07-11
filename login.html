@@ -14,7 +14,7 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="Laman.css" />
+    <link rel="stylesheet" href="css/login.css" />
   </head>
 
   <body>
@@ -24,9 +24,9 @@
       <nav>
         <ul>
           <li>
-            <a href="index.html" class="menu-card">
+            <a href="dashboard.html" class="menu-card">
               <div class="nd-container">
-                <img src="money.png" alt="Finance" />
+                <img src="assets/money.png" alt="Finance" />
 
                 <p>Track Your Daily Finance</p>
               </div>
@@ -42,6 +42,12 @@
               </div>
             </a>
           </li>
+
+          <input type="email" id="email" />
+
+          <input type="password" id="password" />
+
+          <button onclick="login()">Login</button>
         </ul>
       </nav>
     </main>
