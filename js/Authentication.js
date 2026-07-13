@@ -76,7 +76,7 @@ window.login = async function () {
 
     alert("Login berhasil!");
 
-    window.location.href = "dashboard.html";
+    window.location.href = "facePage.html";
   } catch (error) {
     alert("Email atau Password salah.");
   }
