@@ -91,7 +91,7 @@ window.logout = async function () {
 
     alert("Logout berhasil.");
 
-    window.location.href = "login.html";
+    window.location.href = "register.html";
   } catch (error) {
     alert(error.message);
   }
@@ -101,23 +101,29 @@ window.logout = async function () {
 // FORGOT PASSWORD
 // =======================
 window.forgotPassword = async function () {
-  const email = document.getElementById("email").value;
+  console.log("forgotPassword dipanggil");
+
+  const email = document.getElementById("email").value.trim();
 
   if (!email) {
     alert("Masukkan email terlebih dahulu.");
-
     return;
   }
 
   try {
+    console.log("Mengirim email reset...");
+
     await sendPasswordResetEmail(auth, email);
 
-    alert("Link reset password telah dikirim ke email Anda.");
+    console.log("Berhasil!");
+
+    alert("Link reset password telah dikirim.");
   } catch (error) {
-    alert(error.message);
+    console.log(error.code);
+    console.log(error.message);
+    alert(error.code + "\n" + error.message);
   }
 };
-
 // =======================
 // CEK STATUS LOGIN
 // =======================

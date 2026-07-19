@@ -1,0 +1,51 @@
+:root {
+  --primary: #3381ff;
+  --secondary: #54cfff;
+  --bg: #7bdaff;
+  --text: #1f2937;
+  --white: #ffffff;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  --radius: 16px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(125deg, rgba(0, 28, 151, 0.4), #94c7f3);
+  gap: 20px;
+  border: 0 25px 0 25px;
+}
+
+.menu-card {
+  border-radius: var(--radius);
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  box-shadow: var(--shadow);
+  transition: all 0.25s ease;
+  color: linear-gradient(125deg, rgba(0, 28, 151, 0.4), #94c7f3);
+  box-shadow: rgba(0, 28, 151, 2);
+}
+
+.container {
+  width: 100%;
+  max-width: 380px;
+  background: linear-gradient(125deg, rgba(0, 28, 151, 0.4), #94c7f3);
+  border-radius: var(--radius);
+  padding: 35px 28px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  color: var(--white);
+}
