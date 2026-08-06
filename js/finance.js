@@ -1,23 +1,23 @@
 import { db, auth } from "./firebase.js";
 
 import {
-    collection,
-    addDoc,
-    getDocs,
-    deleteDoc,
-    doc,
-    query,
-    where
+  collection,
+  addDoc,
+  getDocs,
+  deleteDoc,
+  doc,
+  query,
+  where,
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
+
+import {
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
 
 // Element HTML
 // =======================
 const form = document.getElementById("formKeuangan");
 const tabel = document.getElementById("dataKeuangan");
-
-
-
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
 
 onAuthStateChanged(auth, (user) => {
     if (!user) {
@@ -40,12 +40,15 @@ form.addEventListener("submit", async function (e) {
 const transaksi = {
     uid: auth.currentUser.uid,
     email: auth.currentUser.email,
+
     tanggal: document.getElementById("tanggal").value,
     jenis: document.getElementById("jenis").value,
     keterangan: document.getElementById("keterangan").value,
     nominal: Number(document.getElementById("nominal").value),
 };
 
+    console.log("User UID :", auth.currentUser.uid);
+    console.log("Transaksi :", transaksi);
 try {
     await addDoc(collection(db, "keuangan"), transaksi);
 
@@ -135,11 +138,3 @@ window.hapusData = async function (id) {
         alert("Gagal menghapus data.");
     }
 };
-onAuthStateChanged(auth, (user) => {
-    if (!user) {
-        window.location.href = "login.html";
-        return;
-    }
-
-    tampilkanData();
-});
