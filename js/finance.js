@@ -75,7 +75,7 @@ form.addEventListener("submit", async (e) => {
       error.message
     );
   }
-};
+});
 
 // =======================
 // Tampilkan Data
