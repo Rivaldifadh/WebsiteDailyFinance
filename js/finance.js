@@ -56,8 +56,11 @@ try {
     tampilkanData();
 
 } catch (error) {
-    console.error(error);
-    alert("Gagal menyimpan data!\n\n" + error.message);
+    console.error("Error Firestore:", error);
+    alert(
+        "Code : " + error.code +
+        "\nMessage : " + error.message
+    );
 }
 });
 
