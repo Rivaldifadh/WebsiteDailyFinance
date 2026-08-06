@@ -55,11 +55,9 @@ form.addEventListener("submit", async (e) => {
     nominal: Number(document.getElementById("nominal").value),
   };
 
-  console.log("Data yang akan disimpan:", transaksi);
-
-  console.log(transaksi); 
   console.log("UID Login :", auth.currentUser.uid);
   console.log("Data :", transaksi);
+  
   try {
     await addDoc(collection(db, "keuangan"), transaksi);
 
