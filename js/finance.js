@@ -55,9 +55,8 @@ form.addEventListener("submit", async (e) => {
     nominal: Number(document.getElementById("nominal").value),
   };
 
-  console.log("UID Login :", auth.currentUser.uid);
-  console.log("Data :", transaksi);
-  
+  console.log("Data yang akan disimpan:", transaksi);
+
   try {
     await addDoc(collection(db, "keuangan"), transaksi);
 
@@ -68,14 +67,14 @@ form.addEventListener("submit", async (e) => {
     tampilkanData();
   } catch (error) {
     console.error("Error lengkap:", error);
-    console.error("Code:", error.code);
-    console.error("Message:", error.message);
 
     alert(
-        "Code: " + error.code +
-        "\nMessage: " + error.message
+      "Code : " +
+      error.code +
+      "\nMessage : " +
+      error.message
     );
-}
+  }
 });
 
 // =======================
@@ -135,7 +134,7 @@ async function tampilkanData() {
       "Rp " + (totalPemasukan - totalPengeluaran).toLocaleString("id-ID");
 
   } catch (error) {
-    console.error(error);
+    console.error("Gagal mengambil data:", error);
   }
 }
 
@@ -143,21 +142,24 @@ async function tampilkanData() {
 // Hapus Data
 // =======================
 window.hapusData = async (id) => {
+
   if (!confirm("Yakin ingin menghapus data ini?")) return;
 
   try {
+
     await deleteDoc(doc(db, "keuangan", id));
 
     tampilkanData();
 
   } catch (error) {
+
     console.error(error);
 
     alert(
       "Code : " +
-        error.code +
-        "\nMessage : " +
-        error.message
+      error.code +
+      "\nMessage : " +
+      error.message
     );
   }
 };
