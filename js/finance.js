@@ -66,14 +66,15 @@ form.addEventListener("submit", async (e) => {
 
     tampilkanData();
   } catch (error) {
-    console.error(error);
+    console.error("Error lengkap:", error);
+    console.error("Code:", error.code);
+    console.error("Message:", error.message);
 
     alert(
-      "Code : " +
-        error.code +
-        "\nMessage : " +
-        error.message
+        "Code: " + error.code +
+        "\nMessage: " + error.message
     );
+}
   }
 });
 
