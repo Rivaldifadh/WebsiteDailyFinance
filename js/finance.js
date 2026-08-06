@@ -56,7 +56,8 @@ form.addEventListener("submit", async (e) => {
   };
 
   console.log("Data yang akan disimpan:", transaksi);
-  
+
+  console.log(transaksi); 
   console.log("UID Login :", auth.currentUser.uid);
   console.log("Data :", transaksi);
   try {
@@ -77,7 +78,6 @@ form.addEventListener("submit", async (e) => {
         "\nMessage: " + error.message
     );
 }
-  }
 });
 
 // =======================
