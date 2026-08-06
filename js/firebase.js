@@ -20,6 +20,7 @@ const firebaseConfig = {
 // Inisialisasi Firebase
 // =======================
 const app = initializeApp(firebaseConfig);
+console.log(app.options.projectId);
 
 // =======================
 // Inisialisasi Firestore
