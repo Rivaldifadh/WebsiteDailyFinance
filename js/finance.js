@@ -27,10 +27,10 @@ onAuthStateChanged(auth, (user) => {
     return;
   }
 
-  console.log("User Login:", user.email);
-  console.log("UID:", user.uid);
+  // console.log("User Login:", user.email);
+  // console.log("UID:", user.uid);
 
-  // tampilkanData();
+  tampilkanData();
 });
 
 // =======================
