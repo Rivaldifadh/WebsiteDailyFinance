@@ -5,7 +5,6 @@ import {
   signInWithEmailAndPassword,
   signOut,
   sendPasswordResetEmail,
-  onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
 
 import {
@@ -17,7 +16,7 @@ import {
 // REGISTER
 // =======================
 window.register = async function () {
-  const email = document.getElementById("email").value;
+  const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
   const confirmPassword = document.getElementById("confirmPassword").value;
 
@@ -33,17 +32,16 @@ window.register = async function () {
   }
 
   try {
-    // Membuat akun di Firebase Authentication
+    // Membuat akun Firebase Authentication
     const userCredential = await createUserWithEmailAndPassword(
       auth,
       email,
       password,
     );
 
-    // Mengambil data user yang baru dibuat
     const user = userCredential.user;
 
-    // Menyimpan profil user ke Firestore
+    // Menyimpan profil pengguna
     await setDoc(doc(db, "users", user.uid), {
       email: user.email,
       role: "user",
@@ -54,8 +52,7 @@ window.register = async function () {
 
     window.location.href = "login.html";
   } catch (error) {
-    alert(error.message);
-    console.error(error);
+    alert("Pendaftaran gagal. Silakan coba kembali.");
   }
 };
 
@@ -63,7 +60,7 @@ window.register = async function () {
 // LOGIN
 // =======================
 window.login = async function () {
-  const email = document.getElementById("email").value;
+  const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
 
   if (!email || !password) {
@@ -78,7 +75,7 @@ window.login = async function () {
 
     window.location.href = "facePage.html";
   } catch (error) {
-    alert("Pendaftaran gagal. Silakan coba kembali.");
+    alert("Email atau Password salah.");
   }
 };
 
@@ -93,7 +90,7 @@ window.logout = async function () {
 
     window.location.href = "register.html";
   } catch (error) {
-    alert(error.message);
+    alert("Logout gagal. Silakan coba kembali.");
   }
 };
 
@@ -101,8 +98,6 @@ window.logout = async function () {
 // FORGOT PASSWORD
 // =======================
 window.forgotPassword = async function () {
-  console.log("forgotPassword dipanggil");
-
   const email = document.getElementById("email").value.trim();
 
   if (!email) {
@@ -111,26 +106,14 @@ window.forgotPassword = async function () {
   }
 
   try {
-    console.log("Mengirim email reset...");
-
     await sendPasswordResetEmail(auth, email);
 
-    console.log("Berhasil!");
-
-    alert("Link reset password telah dikirim.");
+    alert(
+      "Jika email tersebut terdaftar, " + "link reset password akan dikirim.",
+    );
   } catch (error) {
-    // console.log(error.code);
-    // console.log(error.message);
-    // alert(error.code + "\n" + error.message);
+    alert(
+      "Jika email tersebut terdaftar, " + "link reset password akan dikirim.",
+    );
   }
 };
-// =======================
-// CEK STATUS LOGIN
-// =======================
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // Pengguna sudah login
-  } else {
-    // Pengguna belum login
-  }
-});

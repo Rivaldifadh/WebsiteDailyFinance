@@ -37,3 +37,26 @@ You're about to initialize a Firebase project in this directory:
     at process.processTimers (node:internal/timers:541:7)
 [error] 
 [error] Error: An unexpected error has occurred.
+[debug] [2026-08-08T15:40:29.967Z] ----------------------------------------------------------------------
+[debug] [2026-08-08T15:40:29.972Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Giroma\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2026-08-08T15:40:29.972Z] CLI Version:   15.22.4
+[debug] [2026-08-08T15:40:29.972Z] Platform:      win32
+[debug] [2026-08-08T15:40:29.973Z] Node Version:  v25.8.2
+[debug] [2026-08-08T15:40:29.973Z] Detected Agent: unknown
+[debug] [2026-08-08T15:40:29.973Z] Time:          Sat Aug 08 2026 22:40:29 GMT+0700 (Waktu Indonesia Barat)
+[debug] [2026-08-08T15:40:29.974Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-08-08T15:40:29.980Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\Giroma\OneDrive - Universitas Terbuka\Desktop\Folder Baru\Aplikasi Daily Finance\WebsiteDailyFinance
+
+[debug] [2026-08-08T15:41:15.537Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-08-08T15:41:15.538Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
