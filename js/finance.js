@@ -26,11 +26,6 @@ onAuthStateChanged(auth, (user) => {
     window.location.href = "login.html";
     return;
   }
-
-  // console.log("User Login:", user.email);
-  // console.log("UID:", user.uid);
-
-  tampilkanData();
 });
 
 // =======================
@@ -53,8 +48,6 @@ form.addEventListener("submit", async (e) => {
     nominal: Number(document.getElementById("nominal").value),
   };
 
-  console.log("Data yang akan disimpan:", transaksi);
-
   try {
     await addDoc(collection(db, "keuangan"), transaksi);
 
@@ -64,9 +57,7 @@ form.addEventListener("submit", async (e) => {
 
     tampilkanData();
   } catch (error) {
-    console.error("Error lengkap:", error);
-
-    alert("Code : " + error.code + "\nMessage : " + error.message);
+    alert("Data gagal disimpan. Silakan coba kembali.");
   }
 });
 
@@ -101,20 +92,22 @@ async function tampilkanData() {
       }
 
       tabel.innerHTML += `
-        <tr>
-          <td>${data.tanggal}</td>
-          <td>${data.jenis}</td>
-          <td>${data.keterangan}</td>
-          <td>Rp ${nominal.toLocaleString("id-ID")}</td>
-          <td>
-            <button
-              class="hapus"
-              onclick="hapusData('${docSnap.id}')">
-              Hapus
-            </button>
-          </td>
-        </tr>
-      `;
+                <tr>
+                    <td>${data.tanggal}</td>
+                    <td>${data.jenis}</td>
+                    <td>${data.keterangan}</td>
+                    <td>
+                        Rp ${nominal.toLocaleString("id-ID")}
+                    </td>
+                    <td>
+                        <button
+                            class="hapus"
+                            onclick="hapusData('${docSnap.id}')">
+                            Hapus
+                        </button>
+                    </td>
+                </tr>
+            `;
     });
 
     document.getElementById("totalPemasukan").textContent =
@@ -126,7 +119,7 @@ async function tampilkanData() {
     document.getElementById("saldo").textContent =
       "Rp " + (totalPemasukan - totalPengeluaran).toLocaleString("id-ID");
   } catch (error) {
-    console.error("Gagal mengambil data:", error);
+    alert("Data keuangan gagal dimuat. Silakan coba kembali.");
   }
 }
 
@@ -134,15 +127,15 @@ async function tampilkanData() {
 // Hapus Data
 // =======================
 window.hapusData = async (id) => {
-  if (!confirm("Yakin ingin menghapus data ini?")) return;
+  if (!confirm("Yakin ingin menghapus data ini?")) {
+    return;
+  }
 
   try {
     await deleteDoc(doc(db, "keuangan", id));
 
     tampilkanData();
   } catch (error) {
-    console.error(error);
-
-    alert("Code : " + error.code + "\nMessage : " + error.message);
+    alert("Data gagal dihapus. Silakan coba kembali.");
   }
 };
