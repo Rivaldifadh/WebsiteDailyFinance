@@ -10,9 +10,7 @@ import {
   where,
 } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-firestore.js";
 
-import {
-  onAuthStateChanged,
-} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
 
 // =======================
 // Element HTML
@@ -32,7 +30,7 @@ onAuthStateChanged(auth, (user) => {
   console.log("User Login:", user.email);
   console.log("UID:", user.uid);
 
-  tampilkanData();
+  // tampilkanData();
 });
 
 // =======================
@@ -68,12 +66,7 @@ form.addEventListener("submit", async (e) => {
   } catch (error) {
     console.error("Error lengkap:", error);
 
-    alert(
-      "Code : " +
-      error.code +
-      "\nMessage : " +
-      error.message
-    );
+    alert("Code : " + error.code + "\nMessage : " + error.message);
   }
 });
 
@@ -91,7 +84,7 @@ async function tampilkanData() {
   try {
     const q = query(
       collection(db, "keuangan"),
-      where("uid", "==", auth.currentUser.uid)
+      where("uid", "==", auth.currentUser.uid),
     );
 
     const snapshot = await getDocs(q);
@@ -132,7 +125,6 @@ async function tampilkanData() {
 
     document.getElementById("saldo").textContent =
       "Rp " + (totalPemasukan - totalPengeluaran).toLocaleString("id-ID");
-
   } catch (error) {
     console.error("Gagal mengambil data:", error);
   }
@@ -142,24 +134,15 @@ async function tampilkanData() {
 // Hapus Data
 // =======================
 window.hapusData = async (id) => {
-
   if (!confirm("Yakin ingin menghapus data ini?")) return;
 
   try {
-
     await deleteDoc(doc(db, "keuangan", id));
 
     tampilkanData();
-
   } catch (error) {
-
     console.error(error);
 
-    alert(
-      "Code : " +
-      error.code +
-      "\nMessage : " +
-      error.message
-    );
+    alert("Code : " + error.code + "\nMessage : " + error.message);
   }
 };
