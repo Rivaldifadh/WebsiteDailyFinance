@@ -78,7 +78,7 @@ window.login = async function () {
 
     window.location.href = "facePage.html";
   } catch (error) {
-    alert("Email atau Password salah.");
+    alert("Pendaftaran gagal. Silakan coba kembali.");
   }
 };
 
@@ -119,9 +119,9 @@ window.forgotPassword = async function () {
 
     alert("Link reset password telah dikirim.");
   } catch (error) {
-    console.log(error.code);
-    console.log(error.message);
-    alert(error.code + "\n" + error.message);
+    // console.log(error.code);
+    // console.log(error.message);
+    // alert(error.code + "\n" + error.message);
   }
 };
 // =======================
@@ -129,8 +129,8 @@ window.forgotPassword = async function () {
 // =======================
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    console.log("User Login :", user.email);
+    // Pengguna sudah login
   } else {
-    console.log("Belum Login");
+    // Pengguna belum login
   }
 });
