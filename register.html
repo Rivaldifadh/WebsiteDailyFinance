@@ -4,18 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
+    <link rel="stylesheet" href="css/register.css" />
   </head>
 
   <body>
-    <h2>Daftar Akun</h2>
-
-    <input type="email" id="email" />
-    <br /><br />
-    <input type="password" id="password" />
-    <br /><br />
-    <input type="password" id="confirmPassword" />
-
-    <button onclick="register()">Daftar</button>
+    <nav class="container">
+      <h2>Daftar Akun</h2>
+      <input type="email" id="email" placeholder="Email" />
+      <br /><br />
+      <input type="password" id="password" placeholder="Password" />
+      <br /><br />
+      <input type="password" id="confirmPassword" placeholder="Confirm Password" />
+      <button onclick="register()">Daftar</button>
+    </nav>
 
     <a href="index.html"></a>
     <script type="module" src="js/Authentication.js"></script>

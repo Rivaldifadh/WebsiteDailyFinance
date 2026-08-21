@@ -21,9 +21,21 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(125deg, rgba(0, 28, 151, 0.4), #94c7f3);
-  gap: 20px;
-  border: 0 25px 0 25px;
+  padding: 25px;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(84, 207, 255, 0.8),
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(51, 129, 255, 0.8),
+      transparent 65%
+    ),
+    linear-gradient(135deg, var(--bg), var(--white));
+  color: var(--text);
+  overflow-x: hidden;
 }
 
 .menu-card {
@@ -42,10 +54,32 @@ body {
 .container {
   width: 100%;
   max-width: 380px;
-  background: linear-gradient(125deg, rgba(0, 28, 151, 0.4), #94c7f3);
+  padding: 40px 35px;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(84, 207, 255, 0.8),
+      transparent 70%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(51, 129, 255, 0.8),
+      transparent 65%
+    );
+  border: 1px solid var(--secondary);
   border-radius: var(--radius);
-  padding: 35px 28px;
-  text-align: center;
   box-shadow: var(--shadow);
-  color: var(--white);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Efek ketika card disentuh mouse */
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
 }

@@ -31,6 +31,10 @@ window.register = async function () {
     return;
   }
 
+  if (password == confirmPassword) {
+    window.location.href = "index.html";
+  }
+
   try {
     // Membuat akun Firebase Authentication
     const userCredential = await createUserWithEmailAndPassword(
