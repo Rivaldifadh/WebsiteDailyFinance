@@ -25,7 +25,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-
 /* =========================
    BODY
 ========================= */
@@ -48,15 +47,10 @@ body {
       rgba(51, 129, 255, 0.8),
       transparent 35%
     ),
-    linear-gradient(
-      135deg,
-      #eaf7ff,
-      #cdeeff
-    );
+    linear-gradient(135deg, #eaf7ff, #cdeeff);
   color: var(--text);
   overflow-x: hidden;
 }
-
 
 /* =========================
    CONTAINER
@@ -86,14 +80,12 @@ body {
     box-shadow 0.3s ease;
 }
 
-
 /* Efek ketika card disentuh mouse */
 
 .container:hover {
   transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
 }
-
 
 /* =========================
    JUDUL
@@ -110,7 +102,6 @@ body {
   letter-spacing: 0.5px;
 }
 
-
 /* =========================
    SUBTITLE
 ========================= */
@@ -124,36 +115,25 @@ body {
   line-height: 1.6;
 }
 
-
 /* =========================
    INPUT
 ========================= */
 
 .container input {
   width: 100%;
-
   padding: 13px 15px;
-
   margin-bottom: 15px;
-
   border: 1px solid #dbeafe;
-
   border-radius: 12px;
-
   outline: none;
-
   background: #f8fbff;
-
   color: var(--text);
-
   font-size: 0.9rem;
-
   transition:
     border 0.25s ease,
     box-shadow 0.25s ease,
     background 0.25s ease;
 }
-
 
 /* Input ketika diklik */
 
@@ -162,17 +142,14 @@ body {
 
   border-color: var(--primary);
 
-  box-shadow:
-    0 0 0 4px rgba(51, 129, 255, 0.12);
+  box-shadow: 0 0 0 4px rgba(51, 129, 255, 0.12);
 }
-
 
 /* Placeholder */
 
 .container input::placeholder {
   color: #94a3b8;
 }
-
 
 /* =========================
    BUTTON
@@ -189,12 +166,7 @@ body {
 
   border-radius: 12px;
 
-  background:
-    linear-gradient(
-      135deg,
-      var(--primary),
-      var(--secondary)
-    );
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
 
   color: var(--white);
 
@@ -203,8 +175,7 @@ body {
 
   cursor: pointer;
 
-  box-shadow:
-    0 8px 18px rgba(51, 129, 255, 0.25);
+  box-shadow: 0 8px 18px rgba(51, 129, 255, 0.25);
 
   transition:
     transform 0.2s ease,
@@ -212,25 +183,21 @@ body {
     filter 0.2s ease;
 }
 
-
 /* Hover button */
 
 .container button:hover {
   transform: translateY(-2px);
 
-  box-shadow:
-    0 12px 25px rgba(51, 129, 255, 0.35);
+  box-shadow: 0 12px 25px rgba(51, 129, 255, 0.35);
 
   filter: brightness(1.05);
 }
-
 
 /* Ketika tombol ditekan */
 
 .container button:active {
   transform: translateY(0);
 }
-
 
 /* =========================
    LINK
@@ -252,20 +219,17 @@ body {
   transition: color 0.2s ease;
 }
 
-
 .container a:hover {
   color: var(--primary-dark);
 
   text-decoration: underline;
 }
 
-
 /* =========================
    RESPONSIVE
 ========================= */
 
 @media (max-width: 480px) {
-
   body {
     padding: 20px;
   }

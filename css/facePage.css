@@ -20,14 +20,15 @@
 }
 
 body {
-  min-height: 100vh;
+  min-height: 10vh;
+  margin-top: 0;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   background: linear-gradient(125deg, rgba(0, 28, 151, 0.4), #94c7f3);
-  gap: 20px;
-  border: 0 25px 0 25px;
+  border: 0 20px 0 20px;
 }
 
 /* body {
@@ -50,24 +51,36 @@ body {
 ========================= */
 
 .container {
-  width: 100%;
-  max-width: 380px;
+  width: min(95%, 360px);
+  margin: 20vh;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
   background: linear-gradient(120deg, var(--primary), var(--bg));
   border-radius: var(--radius);
-  padding: 35px 28px;
   text-align: center;
-  box-shadow: var(--shadow);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   color: var(--white);
 }
 
 .container h1 {
-  color: #fff;
+  color: black;
   font-size: 1.6rem;
   font-weight: 600;
   margin-bottom: 28px;
 }
 .container img {
   border-radius: 50%;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
 }
 
 /* =========================
@@ -134,8 +147,9 @@ nav a {
 
 .footer {
   width: 100%;
-  margin-top: 35px;
-  padding: 18px 15px;
+  margin: 0;
+  padding: 8px 15px 12px;
+  flex-shrink: 0;
   text-align: center;
 }
 
@@ -191,7 +205,7 @@ nav a {
 }
 
 header {
-  position: sticky; /* atau fixed jika ingin selalu di atas */
+  position: relative; /* atau fixed jika ingin selalu di atas */
   top: 0;
   border-bottom: 100rem;
   width: 100%;
