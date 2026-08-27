@@ -117,7 +117,7 @@ window.forgotPassword = async function () {
     );
   } catch (error) {
     alert(
-      "Jika email tersebut terdaftar, " + "link reset password akan dikirim.",
+      "Jika email tersebut gagal dikirim",
     );
   }
 };
