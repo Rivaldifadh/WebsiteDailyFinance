@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forgot Account</title>
+    <link rel="stylesheet" href="css/forgot.css" />
   </head>
   <body>
-    <input type="email" id="email" placeholder="Masukkan Email" />
-
-    <button onclick="forgotPassword()">Reset Password</button>
+    <div class="container">
+      <h2>Forgot Password</h2>
+      <p>Masukkan email Anda untuk reset password.</p>
+      <input type="email" id="email" placeholder="Masukkan Email" />
+      <button onclick="forgotPassword()">Reset Password</button>
+    </div>
   </body>
   <script type="module" src="js/Authentication.js"></script>
 </html>

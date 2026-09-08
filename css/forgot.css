@@ -1,0 +1,246 @@
+:root {
+  --primary: #3381ff;
+  --primary-dark: #2167d9;
+  --secondary: #54cfff;
+  --bg: #eef7ff;
+
+  --text: #1f2937;
+  --text-light: #64748b;
+  --white: #ffffff;
+
+  --shadow: 0 20px 45px rgba(30, 100, 180, 0.18);
+  --shadow-hover: 0 25px 55px rgba(30, 100, 180, 0.25);
+
+  --radius: 20px;
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(84, 207, 255, 0.8),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(51, 129, 255, 0.8),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #eaf7ff, #cdeeff);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 380px;
+
+  padding: 40px 35px;
+
+  background: rgba(255, 255, 255, 0.88);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+
+  border-radius: var(--radius);
+
+  box-shadow: var(--shadow);
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  text-align: center;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Efek ketika card disentuh mouse */
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* =========================
+   JUDUL
+========================= */
+
+.container h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  color: var(--text);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   SUBTITLE
+========================= */
+
+.container p {
+  margin-bottom: 25px;
+
+  color: var(--text-light);
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* =========================
+   INPUT
+========================= */
+
+.container input {
+  width: 100%;
+  padding: 13px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  outline: none;
+  background: #f8fbff;
+  color: var(--text);
+  font-size: 0.9rem;
+  transition:
+    border 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+/* Input ketika diklik */
+
+.container input:focus {
+  background: var(--white);
+
+  border-color: var(--primary);
+
+  box-shadow: 0 0 0 4px rgba(51, 129, 255, 0.12);
+}
+
+/* Placeholder */
+
+.container input::placeholder {
+  color: #94a3b8;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.container button {
+  width: 100%;
+
+  padding: 13px 20px;
+
+  margin-top: 5px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+
+  color: var(--white);
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 18px rgba(51, 129, 255, 0.25);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    filter 0.2s ease;
+}
+
+/* Hover button */
+
+.container button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 25px rgba(51, 129, 255, 0.35);
+
+  filter: brightness(1.05);
+}
+
+/* Ketika tombol ditekan */
+
+.container button:active {
+  transform: translateY(0);
+}
+
+/* =========================
+   LINK
+========================= */
+
+.container a {
+  display: inline-block;
+
+  margin-top: 18px;
+
+  color: var(--primary);
+
+  font-size: 0.85rem;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.container a:hover {
+  color: var(--primary-dark);
+
+  text-decoration: underline;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 480px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 100%;
+
+    padding: 32px 25px;
+  }
+
+  .container h1 {
+    font-size: 1.7rem;
+  }
+}
