@@ -1019,7 +1019,7 @@ footer {
    SMALL MOBILE
    ========================================= */
 
-@media (max-width: 380px) {
+@media (max-width: 480px) {
   .login-page {
     padding: 20px 14px;
   }
