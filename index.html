@@ -1,37 +1,237 @@
 <!doctype html>
-<html lang="en">
+<html lang="id">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Finance App</title>
+
+    <title>Login - Daily Finance</title>
+
     <link rel="stylesheet" href="css/Index.css" />
   </head>
 
   <body>
-    <main class="container">
-      <h1>Login</h1>
-      <br>
-      <input type="email" id="email" placeholder="Masukkan Email" />
+    <main class="login-page">
+      <!-- Background decoration -->
+      <div class="bg-shape bg-shape-1"></div>
+      <div class="bg-shape bg-shape-2"></div>
 
-      <br /><br />
+      <div class="login-wrapper">
+        <!-- =========================
+             LEFT SIDE
+        ========================== -->
+        <section class="hero-section">
+          <div class="brand">
+            <div class="brand-icon">
+              <span>▣</span>
+            </div>
 
-      <input type="password" id="password" placeholder="Masukkan Password" />
+            <div>
+              <h2>Daily Finance</h2>
+              <p>Catat · Kelola · Capai Tujuan</p>
+            </div>
+          </div>
 
-      <br /><br />
+          <div class="hero-content">
+            <span class="eyebrow">PERSONAL FINANCE</span>
 
-      <button onclick="login()">Login</button>
+            <h1>
+              Mulai Kelola<br />
+              Keuangan Harianmu
+            </h1>
 
-      
+            <p class="hero-description">
+              Pencatatan keuangan yang sederhana, membantu kamu mengelola
+              pemasukan dan pengeluaran dengan lebih mudah.
+            </p>
 
-      <a href="register.html" id="register-link">Belum punya akun? Daftar</a>
+            <div class="feature-list">
+              <div class="feature-item">
+                <div class="feature-icon">↗</div>
+                <span>Pantau pemasukan & pengeluaran</span>
+              </div>
 
-      <br />
+              <div class="feature-item">
+                <div class="feature-icon">✓</div>
+                <span>Data tersimpan dengan aman</span>
+              </div>
 
-      <a href="forgot.html" id="forgot-password-link">Lupa Password? </a>
+              <div class="feature-item">
+                <div class="feature-icon">◎</div>
+                <span>Raih tujuan finansialmu</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Finance Illustration -->
+          <div class="finance-illustration">
+            <div class="circle-decoration"></div>
+
+            <div class="phone-card">
+              <div class="phone-top">
+                <span>Total Saldo</span>
+                <strong>Rp 1.250.000</strong>
+              </div>
+
+              <div class="chart">
+                <span style="height: 35%"></span>
+                <span style="height: 52%"></span>
+                <span style="height: 68%"></span>
+                <span style="height: 85%"></span>
+              </div>
+
+              <div class="phone-bottom">
+                <span>Keuangan Bulanan</span>
+                <span>+12.5%</span>
+              </div>
+            </div>
+
+            <div class="wallet">
+              <div class="wallet-button"></div>
+            </div>
+
+            <div class="coin coin-1"></div>
+            <div class="coin coin-2"></div>
+            <div class="coin coin-3"></div>
+
+            <div class="income-card">
+              <div class="mini-icon income">↑</div>
+              <div>
+                <small>Pemasukan</small>
+                <strong>Rp 2.000.000</strong>
+              </div>
+            </div>
+
+            <div class="expense-card">
+              <div class="mini-icon expense">↓</div>
+              <div>
+                <small>Pengeluaran</small>
+                <strong>Rp 750.000</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =========================
+             RIGHT SIDE LOGIN
+        ========================== -->
+        <section class="login-section">
+          <div class="login-card">
+            <div class="login-brand">
+              <div class="brand-icon small">
+                <span>▣</span>
+              </div>
+
+              <span>Daily Finance</span>
+            </div>
+
+            <div class="login-heading">
+              <h1>Login</h1>
+
+              <p>Selamat datang kembali! Silakan login untuk melanjutkan.</p>
+            </div>
+
+            <!-- Login Form -->
+            <form
+              id="login-form"
+              onsubmit="
+                event.preventDefault();
+                login();
+              "
+            >
+              <!-- Email -->
+              <div class="input-group">
+                <label for="email">Email</label>
+
+                <div class="input-wrapper">
+                  <span class="input-icon">✉</span>
+
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Masukkan Email"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+              </div>
+
+              <!-- Password -->
+              <div class="input-group">
+                <label for="password">Password</label>
+
+                <div class="input-wrapper">
+                  <span class="input-icon">▣</span>
+
+                  <input
+                    type="password"
+                    id="password"
+                    placeholder="Masukkan Password"
+                    autocomplete="current-password"
+                    required
+                  />
+
+                  <button
+                    type="button"
+                    class="password-toggle"
+                    onclick="togglePassword()"
+                    aria-label="Tampilkan password"
+                  >
+                    ◉
+                  </button>
+                </div>
+              </div>
+
+              <!-- Login button -->
+              <button type="submit" class="login-button">
+                <span>Login</span>
+                <span class="arrow">→</span>
+              </button>
+            </form>
+
+            <!-- Divider -->
+            <div class="divider">
+              <span></span>
+              <p>atau</p>
+              <span></span>
+            </div>
+
+            <!-- Register -->
+            <p class="register-text">
+              Belum punya akun?
+              <a href="register.html" id="register-link"> Daftar </a>
+            </p>
+
+            <!-- Forgot password -->
+            <a href="forgot.html" id="forgot-password-link" class="forgot-link">
+              Lupa Password?
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <footer>
+        © 2026 Daily Finance · Kelola keuanganmu dengan lebih mudah.
+      </footer>
     </main>
 
-    <script src="js/index.js"></script>
-    <script src="js/register.js"></script>
+    <!-- Existing JavaScript -->
+     
     <script type="module" src="js/Authentication.js"></script>
+
+    <!-- Password toggle -->
+    <script>
+      function togglePassword() {
+        const password = document.getElementById("password");
+        const toggle = document.querySelector(".password-toggle");
+
+        if (password.type === "password") {
+          password.type = "text";
+          toggle.textContent = "◉";
+        } else {
+          password.type = "password";
+          toggle.textContent = "◉";
+        }
+      }
+    </script>
   </body>
 </html>
