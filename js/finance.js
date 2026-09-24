@@ -134,18 +134,49 @@ async function tampilkanData() {
 // Update Data
 // =======================
 window.updateData = async (id) => {
-  if (!confirm("Yakin ingin update data ini?")) {
+  const tanggal = prompt("Masukkan tanggal baru:");
+  const jenis = prompt("Masukkan jenis baru (Pemasukan/Pengeluaran):");
+  const keterangan = prompt("Masukkan keterangan baru:");
+  const nominal = prompt("Masukkan nominal baru:");
+
+  // Jika pengguna membatalkan
+  if (
+    tanggal === null ||
+    jenis === null ||
+    keterangan === null ||
+    nominal === null
+  ) {
+    return;
+  }
+
+  // Validasi data
+  if (!tanggal || !jenis || !keterangan || !nominal) {
+    alert("Semua data harus diisi.");
+    return;
+  }
+
+  if (!confirm("Yakin ingin memperbarui data ini?")) {
     return;
   }
 
   try {
-    await updateDoc(doc(db, "keuangan", id));
+    await updateDoc(doc(db, "keuangan", id), {
+      tanggal: tanggal,
+      jenis: jenis,
+      keterangan: keterangan,
+      nominal: Number(nominal)
+    });
+
+    alert("Data berhasil diperbarui.");
 
     tampilkanData();
+
   } catch (error) {
+    console.error("Error update:", error);
     alert("Data gagal diupdate. Silakan coba kembali.");
   }
 };
+
 // =======================
 // Hapus Data
 // =======================
