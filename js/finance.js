@@ -107,6 +107,11 @@ async function tampilkanData() {
                             onclick="hapusData('${docSnap.id}')">
                             Hapus
                         </button>
+                        <button
+                            class="update"
+                            onclick="updateData('${docSnap.id}')">
+                            update
+                        </button>
                     </td>
                 </tr>
             `;
@@ -126,6 +131,22 @@ async function tampilkanData() {
 }
 
 // =======================
+// Update Data
+// =======================
+window.updateData = async (id) => {
+  if (!confirm("Yakin ingin update data ini?")) {
+    return;
+  }
+
+  try {
+    await updateDoc(doc(db, "keuangan", id));
+
+    tampilkanData();
+  } catch (error) {
+    alert("Data gagal diupdate. Silakan coba kembali.");
+  }
+};
+// =======================
 // Hapus Data
 // =======================
 window.hapusData = async (id) => {
@@ -141,3 +162,4 @@ window.hapusData = async (id) => {
     alert("Data gagal dihapus. Silakan coba kembali.");
   }
 };
+
