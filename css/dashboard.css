@@ -294,17 +294,6 @@ header {
     padding: 6px;
     font-size: 12px;
   }
-/* =========================
-   BUTTON AKSI TABEL
-========================= */
-
-td:last-child button {
-  padding: 6px 10px;
-  font-size: 13px;
-  border-radius: 6px;
-  margin: 2px;
-  white-space: nowrap;
-}
 
   /* ===== TABLE MOBILE ===== */
   /* ===== TABLE MOBILE ===== */
